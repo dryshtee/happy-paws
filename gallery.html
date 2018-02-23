@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gallery</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+	
+	<body class="container-fluid">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+			  <div class="container-fluid">
+				<a class="navbar-brand" href="#"><img alt="logo" src="images/paws.png" width="50" height="50"> HAPPY PAWS </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+				  <ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+					  <a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="about.html">About</a>
+					</li>
+				   <div class="dropdown">
+						<a data-target="#" href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">Services <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a class="nav-link" href="#">Pet Health</a></li>
+							<li><a class="nav-link" href="#">Pet Grooming</a></li>
+							<li><a class="nav-link" href="#">Pet Sitting</a></li>
+							<li><a class="nav-link" href="#">Pet Adoption</a></li>
+						</ul>
+					</div>
+					<li class="nav-item">
+						 <a class="nav-link active" href="gallery.html">Gallery
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+                    <li class="nav-item">
+						<a class="nav-link" href="event.html">Events</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>
+		</header>
+		
+		<section id="ourGallery">
+		<h2>Our Gallery</h2>
+			<div class="container">
+				<div class="row" id="fixedDiv">
+				   <div class="col-md-3">
+					<img class="gallery-img" src="images/gallery1.jpg" alt="Gallery 1">
+				   </div>
+				   <div class="col-md-3">
+					<img class="gallery-img" src="images/gallery2.jpg" alt="Gallery 2">
+				   </div>
+				   <div class="col-md-3">
+					<img class="gallery-img" src="images/gallery3.jpg" alt="Gallery 3">
+				   </div>
+				   <div class="col-md-3">
+					<img class="gallery-img" src="images/gallery4.jpg" alt="Gallery 4">
+				   </div>
+				</div>
+				<center>
+					<button type="button" class="btn btn-outline-secondary" onclick="seeMoreFunction()">
+						See More <i class="fa fa-chevron-right" aria-hidden="true"></i> 
+					</button>
+				</center>
+				<div class="row" id="seeMoreDiv" style="visibility:hidden">
+					<div class="col-md-3">
+						<img class="gallery-img" src="images/gallery5.jpg" alt="Gallery 5">
+					</div>
+					<div class="col-md-3">
+						<img class="gallery-img" src="images/gallery6.jpg" alt="Gallery 6">
+					</div>
+					<div class="col-md-3">
+						<img class="gallery-img" src="images/gallery7.jpg" alt="Gallery 7">
+					</div>
+					<div class="col-md-3">
+						<img class="gallery-img" src="images/gallery8.jpg" alt="Gallery 8">
+					</div>
+					<div class="col-md-3">
+						<img class="gallery-img" src="images/gallery9.jpg" alt="Gallery 9">
+					</div>
+					<div class="col-md-3">
+						<img class="gallery-img" src="images/gallery10.jpg" alt="Gallery 10">
+					</div>
+					<div class="col-md-3">
+						<img class="gallery-img" src="images/gallery11.jpg" alt="Gallery 11">
+					</div>
+					<div class="col-md-3">
+						<img class="gallery-img" src="images/gallery12.jpg" alt="Gallery 12">
+					</div>
+				</div>
+			</div>
+			<div id="lowerDiv" style="margin-top:-400px">
+		</section>
+	</body>
+	<footer class="footer-wrapper fixed-bottom">
+		</div class="container">
+			<div class="row">
+			<div class="col-8">
+				<div class="social-media-icons">
+				<i class="fa fa-facebook-square fa-2x"></i>
+				<i class="fa  fa-twitter-square fa-2x"></i>
+				<i class="fa fa-instagram fa-2x"></i>
+			</div>
+			</div>
+			<div class="col-4">Happy Paws | Copyright &copy; 2017</div>
+			</div>
+		</div>
+    </footer>
+</html>

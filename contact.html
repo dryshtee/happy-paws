@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contact Us</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		
+		<script>
+		function resetFunction(){
+			var arrayTextBoxName=["inputFullName","inputPostCode","inputEmail","inputPhoneNumber","enquiryTextarea"];
+			
+			var i;
+			
+			for (i=0;i<arrayTextBoxName.length;i++){
+				
+				document.getElementById(arrayTextBoxName[i]).value="";
+				
+			}
+			
+			var Dropdown = document.getElementById("inputState");
+			Dropdown.selectedIndex=0;
+
+		}
+		
+		function sendEnquiry(){
+		
+		var arrayTextBox=["inputFullName","inputPostCode","inputEmail","inputPhoneNumber","enquiryTextarea"];
+		
+		var arrayId=["errorFullName","errorPostCode","errorEmailAddress","errorPhoneNumber","errorEnquiry"];
+		
+		var arrayErrorMsg=["*Full Name cannot be empty","*Post Code cannot be empty","*Email Address cannot be empty","*Phone Number cannot be empty","*Enquiry cannot be empty"];
+		
+		var x;
+		
+		for(x=0;x<arrayTextBox.length;x++){
+			if(document.getElementById(arrayTextBox[x]).value===""){
+			
+			document.getElementById(arrayId[x]).innerHTML=arrayErrorMsg[x];
+			}
+			else{
+			}
+		}
+		
+		//validation for drop down will be put here so that it is part of this function
+		
+		var a = document.getElementById("inputState").selectedIndex;
+		var b = document.getElementById("inputState").options;
+		
+		if(b[a].text==="Select"){
+			document.getElementById("errorReason").innerHTML="*Select a reason";
+		}
+		else{
+		
+		}
+		
+		return false;
+		}
+		
+		</script>
+	</head>
+	
+	<body class="container-fluid" style="background-color: #f2f2f2" onload="resetFunction()">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+			  <div class="container-fluid">
+				<a class="navbar-brand" href="#"><img alt="logo" src="images/paws.png" width="50" height="50"> HAPPY PAWS </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+				  <ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+					  <a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="#">About</a>
+					</li>
+				   <div class="dropdown">
+						<a data-target="#" href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">Services <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a class="nav-link" href="#">Pet Health</a></li>
+							<li><a class="nav-link" href="#">Pet Grooming</a></li>
+							<li><a class="nav-link" href="#">Pet Sitting</a></li>
+							<li><a class="nav-link" href="#">Pet Adoption</a></li>
+						</ul>
+					</div>
+					<li class="nav-item">
+					  <a class="nav-link" href="#">Gallery</a>
+					</li>
+                    <li class="nav-item">
+					  <a class="nav-link" href="#">Events</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link active" href="#">Contact
+						<span class="sr-only">(current)</span>
+					  </a>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>
+		</header>
+
+		<h2>Contact Us</h2>
+		<section class="contact-us">
+			<div class="google-map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.8457935883!2d57.49487351518534!3d-20.223728052733442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5af2ad52164f%3A0x650b09b881245953!2sBagatelle+-+Mall+of+Mauritius!5e0!3m2!1sen!2suk!4v1510916466325" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+				<div class="floating-box">
+					<h2>Would you like to get in touch?</h2>
+					<hr>
+					<h6>Looking to adopt? Need to rehome a pet?</h6>
+						<p>For all adoption queries, please contact your nearest rescue centres directly. 
+						Our small pet adoption centres can be found inside Pets at Home stores so please visit 
+						or call directly and the team in store will be happy to help you.</p>
+					</br>
+					<h6>Contact the Charity Team</h6>
+						<p>If you'd like to speak to the charity team at Happy Paws please email us on <a href="#">info@happypaws.mu</a> or use the form below. </p>
+					</br>
+					<h6>Media Enquiries</h6>
+						<p>For any PR enquiries please contact the team at Smoking Gun PR on <a href="#">safp@smokinggunpr.com</a>.</p>
+					</br>
+					<h6>Follow Us</h6>
+					<div class="social-icons">
+						<i class="fa fa-facebook-square fa-2x"></i>
+						<i class="fa  fa-twitter-square fa-2x"></i>
+						<i class="fa fa-instagram fa-2x"></i>
+					</div>
+					</br>
+					</br>
+				<div class="contact-form">
+					<form action="#" onsubmit="return sendEnquiry();">
+						<div class="form-row">
+						<div class="form-group col-md-6">
+						  <label for="inputFullName">Full Name</label>
+						  <input type="text" class="form-control" id="inputFullName">
+						  <p id="errorFullName" style="color:red;"></p>
+						</div>
+						<div class="form-group col-md-4">
+						  <label for="inputReason">Reason for Enquiry</label>
+						  <select id="inputState" class="form-control">
+							<option selected>Select</option>
+							<option>Pet Health</option>
+							<option>Pet Grooming</option>
+							<option>Pet Sitting</option>
+							<option>Pet Adoption</option>
+							<option>Other</option>
+						  </select>
+						  <p id="errorReason" style="color:red;"></p>
+						</div>
+						<div class="form-group col-md-2">
+						  <label for="inputPostCode">Post Code</label>
+						  <input type="text" class="form-control" id="inputPostCode">
+						  <p id="errorPostCode" style="color:red;"></p>
+						</div>
+						</div>
+						<div class="form-row">						  
+						<div class="form-group col-md-6">
+							<label for="inputEmail">Email Address</label>
+							<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+							<p id="errorEmailAddress" style="color:red;"></p>
+							</br>
+							<label for="inputPhoneNumber">Phone Number</label>
+							<input type="text" class="form-control" id="inputPhoneNumber">
+							<p id="errorPhoneNumber" style="color:red;"></p>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="enquiryTextarea">Your Enquiry</label>
+							<textarea class="form-control" id="enquiryTextarea" rows="5"></textarea>
+							<p id="errorEnquiry" style="color:red;"></p>
+						 </div>
+						</div>
+						<div class="form-row">
+							<button type="submit" class="btn btn-outline-secondary">
+							Send <i class="fa fa-paper-plane" aria-hidden="true"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+		</section>
+	</body>
+	<footer class="footer-wrapper fixed-bottom">
+		</div class="container">
+			<div class="row">
+			<div class="col-8">
+
+			</div>
+			<div class="col-4">Happy Paws | Copyright &copy; 2017</div>
+			</div>
+		</div>
+    </footer>
+</html>

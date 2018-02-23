@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration Form</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		
+		<script>
+		function resetFunction(){
+			var arrayTextBoxName=["inputFName","inputLName","inputAddress","inputEmail","descriptionTextarea"];
+			
+			var arrayCheck=["chkPetHealth","chkPetGrooming","chkPetSitting","chkPetAdoption","chkOther"];
+			
+			var i;
+			
+			for (i=0;i<arrayTextBoxName.length;i++){
+				
+				document.getElementById(arrayTextBoxName[i]).value="";
+				
+			}
+			
+			var j;
+			
+			for (j=0;j<arrayCheck.length;j++) {
+			
+				document.getElementById(arrayCheck[j]).checked=false;
+			
+			}
+		}
+		
+		function register() {
+		
+			//declaration of an array containing variable names of the txtboxes
+			var arrayTextBoxName=["inputFName","inputLName","inputAddress","inputEmail","descriptionTextarea"];
+			
+			//declaration of an array containing the id of the <p> which will contain error message
+			var arrayId=["chkFirstName","chkLastName","chkAddress","chkEmail","chkDescription"];
+			
+			//declaration of an array that will contain actual error msg for each txtbox
+			var arrayError=["first name cannot be blank","last name cannot be blank","address cannot be blank","email address cannot be blank","description cannot be blank"];
+			
+			//loop to see if the texboxes are blank
+			var i;
+			
+			for (i=0;i<arrayTextBoxName.length;i++){
+				//this condition chks if the txtBox is empty
+				if(document.getElementById(arrayTextBoxName[i]).value===""){
+				
+					//if the txtBox is empty then display errorMsg in <p> => id found in arrayId
+					document.getElementById(arrayId[i]).innerHTML=arrayError[i];
+				}
+				else{
+				
+				}
+			
+			}
+			
+			//let's handle the chk boxes
+			
+			var arrayCheck=["chkPetHealth","chkPetGrooming","chkPetSitting","chkPetAdoption","chkOther"];
+			
+			var j;
+			
+			var isCheckedCounter=0;
+			
+			for (j=0;j<arrayCheck.length;j++){
+				if(document.getElementById(arrayCheck[j]).checked==true){
+					isCheckedCounter=isCheckedCounter+1;
+				}
+				else{
+				
+				}
+			}
+			
+			if(isCheckedCounter>0){
+				//do not display
+			}
+			else if(isCheckedCounter==0){
+				document.getElementById("chkService").innerHTML="Select at least one service";
+			}
+			
+			return false;
+		}
+		</script>
+	</head>
+	
+	<body style="background: #f2f2f2" onload="resetFunction();">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+			  <div class="container-fluid">
+				<a class="navbar-brand" href="#"><img alt="logo" src="images/paws.png" width="50" height="50"> HAPPY PAWS </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+				  <ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+					  <a class="nav-link " href="index.html">Back to Home</a>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>
+		</header>
+		
+		<section id="registrationForm">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><h2>Registration Form</h2></h3>
+				</div>
+				<hr>
+				<div class="panel-body">
+					<form action="#"  onsubmit="return register();">
+						<div class="form-row">
+							<div class="form-group col-md-6">
+							  <label for="inputFName">First Name</label>
+							  <input type="text" class="form-control" id="inputFName">
+							  <p id="chkFirstName" style="color:red"></p>
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="inputLName">Last Name</label>
+							  <input type="text" class="form-control" id="inputLName">
+							  <p id="chkLastName" style="color:red"></p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputAddress">Address</label>
+							<input type="text" class="form-control" id="inputAddress">
+							<p id="chkAddress" style="color:red"></p>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail">Email</label>
+							<input type="email" class="form-control" id="inputEmail">
+							<p id="chkEmail" style="color:red"></p>
+						</div>
+						<div class="form-group">
+						<label for="#">Services</label>
+						<div class="row">
+							<div class="form-check col-2">
+							  <label class="form-check-label">
+								<input class="form-check-input" id="chkPetHealth" type="checkbox"> Pet Health
+							  </label>
+							</div>
+							<div class="form-check col-3">
+							  <label class="form-check-label">
+								<input class="form-check-input" id="chkPetGrooming" type="checkbox"> Pet Grooming
+							  </label>
+							</div>
+						<div class="form-check col-2">
+							<label class="form-check-label">
+								<input class="form-check-input" id="chkPetSitting" type="checkbox"> Pet Sitting
+							</label>
+						</div>
+						<div class="form-check col-3">
+							<label class="form-check-label">
+								<input class="form-check-input" id="chkPetAdoption" type="checkbox"> Pet Adoption
+							</label>
+						</div>
+						<div class="form-check col-2">
+							<label class="form-check-label">
+								<input class="form-check-input" id="chkOther" type="checkbox"> Other
+							</label>
+						</div>
+						<p id="chkService" style="color:red"></p>
+						</div>
+						</br>
+						<div class="form-group">
+							<label for="descriptionTextarea">Description</label>
+							<textarea class="form-control" id="descriptionTextarea" rows="5"></textarea>
+							<p id="chkDescription" style="color:red"></p>
+						</div>
+						</div>
+						<button type="submit" class="btn btn-outline-secondary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</body>
+	
+	<footer class="footer-wrapper fixed-bottom">
+		</div class="container">
+			<div class="row">
+			<div class="col-8">
+			<div class="social-media-icons">
+				<i class="fa fa-facebook-square fa-2x"></i>
+				<i class="fa  fa-twitter-square fa-2x"></i>
+				<i class="fa fa-instagram fa-2x"></i>
+			</div>
+			</div>
+			<div class="col-4">Happy Paws | Copyright &copy; 2017</div>
+			</div>
+		</div>
+    </footer>
+</html>
